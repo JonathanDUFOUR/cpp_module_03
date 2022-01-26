@@ -5,39 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/26 11:00:10 by jodufour          #+#    #+#             */
-/*   Updated: 2022/01/26 15:51:08 by jodufour         ###   ########.fr       */
+/*   Created: 2022/01/26 15:12:04 by jodufour          #+#    #+#             */
+/*   Updated: 2022/01/26 15:56:10 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cstdlib>
-#include <climits>
-#include "ClapTrap.hpp"
+#include <iostream>
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int	main(void)
 {
-	ClapTrap	ct("C3PO");
-	int			i;
+	ClapTrap	ct("Pouic");
+	ScavTrap	st("Koala");
+	FragTrap	ft("Codac");
 
 	std::cout << ct << std::endl;
+	std::cout << st << std::endl;
+	std::cout << ft << std::endl;
 
-	ct = ClapTrap("R2D2");
+	ft = FragTrap("Jojoz");
 
-	std::cout << ct << std::endl;
+	std::cout << ft << std::endl;
 
-	for (i = 0 ; i < 15 ; ++i)
-	{
-		ct.attack("Dark Vader");
-		ct.beRepaired(1);
-	}
-
-	std::cout << ct << std::endl;
-
-	ct.takeDamage(42);
-	ct.attack("Dark Vader");
-	ct.beRepaired(101010);
-
-	std::cout << ct << std::endl;
+	ft.highFivesGuys();
 
 	return EXIT_SUCCESS;
 }
