@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 13:22:30 by jodufour          #+#    #+#             */
-/*   Updated: 2022/01/26 15:02:45 by jodufour         ###   ########.fr       */
+/*   Updated: 2022/01/27 19:02:28 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,28 @@ ScavTrap::~ScavTrap(void)
 // ************************************************************************* //
 //                          Public Member Functions                          //
 // ************************************************************************* //
+
+void	ScavTrap::attack(std::string const &target)
+{
+	std::cout
+	<< "ScavTrap "
+	<< this->_name;
+	if (this->_hitPoints && this->_energyPoints)
+		std::cout
+		<< " deals "
+		<< this->_attackDamage
+		<< " damages to ";
+	else if (!this->_hitPoints)
+		std::cout
+		<< " hasn't enough hit points to attack ";
+	else
+		std::cout
+		<< " hasn't enough energy points to attack ";
+	std::cout
+	<< target
+	<< std::endl;
+	this->_energyPoints -= !!this->_energyPoints;
+}
 
 void	ScavTrap::guardGate(void)
 {

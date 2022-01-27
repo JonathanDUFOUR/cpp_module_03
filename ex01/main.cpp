@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 13:14:26 by jodufour          #+#    #+#             */
-/*   Updated: 2022/01/26 15:52:47 by jodufour         ###   ########.fr       */
+/*   Updated: 2022/01/27 18:53:44 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ int	main(void)
 	st = ScavTrap("TX");
 
 	std::cout << st << std::endl;
+
+	st.attack(std::string("Sarah CONNOR"));
 
 	st.guardGate();
 	st.guardGate();

@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 13:14:55 by jodufour          #+#    #+#             */
-/*   Updated: 2022/01/26 16:31:51 by jodufour         ###   ########.fr       */
+/*   Updated: 2022/01/27 19:08:54 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@
 class ScavTrap : virtual public ClapTrap
 {
 private:
-	bool	_activeMode;
 
 protected:
+	bool	_activeMode;
 
 public:
 	// Constructors
@@ -33,6 +33,7 @@ public:
 	virtual ~ScavTrap(void);
 
 	// Member functions
+	void	attack(std::string const &target);
 	void	guardGate(void);
 
 	// Operator overloads
