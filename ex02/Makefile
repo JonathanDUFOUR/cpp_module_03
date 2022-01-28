@@ -6,7 +6,7 @@
 #    By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/26 15:08:50 by jodufour          #+#    #+#              #
-#    Updated: 2022/01/26 15:09:51 by jodufour         ###   ########.fr        #
+#    Updated: 2022/01/29 00:52:10 by jodufour         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,17 +26,20 @@ NAME			=	ex02.out
 #######################################
 #             DIRECTORIES             #
 #######################################
-SRC_DIR			=	./
+SRC_DIR			=	srcs/
 OBJ_DIR			=	objs/
+PRV_DIR			=	private/
 
 ######################################
 #            SOURCE FILES            #
 ######################################
 SRC				=	\
-					ClapTrap.cpp	\
-					FragTrap.cpp	\
-					main.cpp		\
-					ScavTrap.cpp
+					${addprefix class/,	\
+						ClapTrap.cpp	\
+						FragTrap.cpp	\
+						ScavTrap.cpp	\
+					}					\
+					main.cpp
 
 ######################################
 #            OBJECT FILES            #
@@ -52,6 +55,7 @@ DEP				=	${OBJ:.o=.d}
 CPPFLAGS		=	-Wall -Wextra -Werror
 CPPFLAGS		+=	-std=c++98
 CPPFLAGS		+=	-MMD -MP
+CPPFLAGS		+=	-I${PRV_DIR}
 
 LDFLAGS			=	
 

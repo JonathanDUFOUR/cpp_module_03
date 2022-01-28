@@ -6,12 +6,12 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 13:14:26 by jodufour          #+#    #+#             */
-/*   Updated: 2022/01/27 18:53:44 by jodufour         ###   ########.fr       */
+/*   Updated: 2022/01/29 00:43:16 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cstdlib>
-#include "ScavTrap.hpp"
+#include "class/ScavTrap.hpp"
 
 int	main(void)
 {

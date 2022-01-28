@@ -6,13 +6,13 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 11:00:10 by jodufour          #+#    #+#             */
-/*   Updated: 2022/01/26 15:51:08 by jodufour         ###   ########.fr       */
+/*   Updated: 2022/01/29 00:43:01 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cstdlib>
 #include <climits>
-#include "ClapTrap.hpp"
+#include "class/ClapTrap.hpp"
 
 int	main(void)
 {

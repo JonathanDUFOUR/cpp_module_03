@@ -6,7 +6,7 @@
 #    By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/26 16:00:57 by jodufour          #+#    #+#              #
-#    Updated: 2022/01/26 16:02:02 by jodufour         ###   ########.fr        #
+#    Updated: 2022/01/29 00:55:14 by jodufour         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,18 +26,21 @@ NAME			=	ex03.out
 #######################################
 #             DIRECTORIES             #
 #######################################
-SRC_DIR			=	./
+SRC_DIR			=	srcs/
 OBJ_DIR			=	objs/
+PRV_DIR			=	private/
 
 ######################################
 #            SOURCE FILES            #
 ######################################
 SRC				=	\
-					ClapTrap.cpp	\
-					DiamondTrap.cpp	\
-					FragTrap.cpp	\
-					main.cpp		\
-					ScavTrap.cpp
+					${addprefix class/,	\
+						ClapTrap.cpp	\
+						DiamondTrap.cpp	\
+						FragTrap.cpp	\
+						ScavTrap.cpp	\
+					}					\
+					main.cpp
 
 ######################################
 #            OBJECT FILES            #
@@ -53,6 +56,7 @@ DEP				=	${OBJ:.o=.d}
 CPPFLAGS		=	-Wall -Wextra -Werror
 CPPFLAGS		+=	-std=c++98
 CPPFLAGS		+=	-MMD -MP
+CPPFLAGS		+=	-I${PRV_DIR}
 
 LDFLAGS			=	
 

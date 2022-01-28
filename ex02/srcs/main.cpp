@@ -6,14 +6,14 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:12:04 by jodufour          #+#    #+#             */
-/*   Updated: 2022/01/26 15:56:10 by jodufour         ###   ########.fr       */
+/*   Updated: 2022/01/29 00:43:30 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cstdlib>
 #include <iostream>
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+#include "class/ScavTrap.hpp"
+#include "class/FragTrap.hpp"
 
 int	main(void)
 {

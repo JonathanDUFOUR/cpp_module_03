@@ -1,65 +1,63 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/26 13:22:30 by jodufour          #+#    #+#             */
-/*   Updated: 2022/01/26 15:02:45 by jodufour         ###   ########.fr       */
+/*   Created: 2022/01/26 15:13:39 by jodufour          #+#    #+#             */
+/*   Updated: 2022/01/29 00:43:30 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "class/FragTrap.hpp"
 
 // ************************************************************************** //
 //                                Constructors                                //
 // ************************************************************************** //
 
-ScavTrap::ScavTrap(void) :
-	ClapTrap("default"),
-	_activeMode(false)
+FragTrap::FragTrap(void) :
+	ClapTrap("default")
 {
 	std::cout
-	<< "Building ScavTrap "
+	<< "Building FragTrap "
 	<< this->_name
 	<< std::endl;
 	this->_hitPoints = 100;
-	this->_energyPoints = 50;
-	this->_attackDamage = 20;
+	this->_energyPoints = 100;
+	this->_attackDamage = 30;
 }
 
-ScavTrap::ScavTrap(ScavTrap const &src) :
+FragTrap::FragTrap(FragTrap const &src) :
 	ClapTrap(src._name)
 {
 	std::cout
-	<< "Building ScavTrap "
+	<< "Building FragTrap "
 	<< this->_name
 	<< std::endl;
 	*this = src;
 }
 
-ScavTrap::ScavTrap(std::string const name) :
-	ClapTrap(name),
-	_activeMode(false)
+FragTrap::FragTrap(std::string const name) :
+	ClapTrap(name)
 {
 	std::cout
-	<< "Building ScavTrap "
+	<< "Building FragTrap "
 	<< this->_name
 	<< std::endl;
 	this->_hitPoints = 100;
-	this->_energyPoints = 50;
-	this->_attackDamage = 20;
+	this->_energyPoints = 100;
+	this->_attackDamage = 30;
 }
 
 // ************************************************************************* //
 //                                Destructors                                //
 // ************************************************************************* //
 
-ScavTrap::~ScavTrap(void)
+FragTrap::~FragTrap(void)
 {
 	std::cout
-	<< "Disassembling ScavTrap "
+	<< "Disassembling FragTrap "
 	<< this->_name
 	<< std::endl;
 }
@@ -68,28 +66,20 @@ ScavTrap::~ScavTrap(void)
 //                          Public Member Functions                          //
 // ************************************************************************* //
 
-void	ScavTrap::guardGate(void)
+void	FragTrap::highFivesGuys(void) const
 {
 	std::cout
-	<< "ScavTrap "
-	<< this->_name;
-	if (!this->_activeMode)
-		std::cout
-		<< " enters ";
-	else
-		std::cout
-		<< " leaves ";
-	std::cout
-	<< "Gate keeper mode"
+	<< "FragTrap "
+	<< this->_name
+	<< " is making a High Five ! _^o^/"
 	<< std::endl;
-	this->_activeMode ^= true;
 }
 
 // ************************************************************************** //
 //                             Operator Overloads                             //
 // ************************************************************************** //
 
-ScavTrap	&ScavTrap::operator=(ScavTrap const &rhs)
+FragTrap	&FragTrap::operator=(FragTrap const &rhs)
 {
 	if (this != &rhs)
 	{
@@ -97,14 +87,13 @@ ScavTrap	&ScavTrap::operator=(ScavTrap const &rhs)
 		this->_hitPoints = rhs._hitPoints;
 		this->_energyPoints = rhs._energyPoints;
 		this->_attackDamage = rhs._attackDamage;
-		this->_activeMode = rhs._activeMode;
 	}
 	return *this;
 }
 
-std::ostream	&operator<<(std::ostream &o, ScavTrap const &rhs)
+std::ostream	&operator<<(std::ostream &o, FragTrap const &rhs)
 {
-	o << "ScavTrap:" << std::endl
+	o << "FragTrap:" << std::endl
 	<< "\t" "name: " << rhs.getName() << std::endl
 	<< "\t" "hitPoints: " << rhs.getHitPoints() << std::endl
 	<< "\t" "energyPoints: " << rhs.getEnergyPoints() << std::endl

@@ -6,15 +6,15 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 16:02:21 by jodufour          #+#    #+#             */
-/*   Updated: 2022/01/27 19:10:24 by jodufour         ###   ########.fr       */
+/*   Updated: 2022/01/29 00:43:49 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cstdlib>
 #include <iostream>
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
-#include "DiamondTrap.hpp"
+#include "class/ScavTrap.hpp"
+#include "class/FragTrap.hpp"
+#include "class/DiamondTrap.hpp"
 
 int	main(void)
 {
