@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 16:03:54 by jodufour          #+#    #+#             */
-/*   Updated: 2022/01/27 18:41:41 by jodufour         ###   ########.fr       */
+/*   Updated: 2022/02/07 03:50:39 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ public:
 	// Member functions
 	void	whoAmI(void) const;
 
-	// Operator overloads
+	// Operators
 	DiamondTrap	&operator=(DiamondTrap const &rhs);
 };
 

@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 13:14:55 by jodufour          #+#    #+#             */
-/*   Updated: 2022/01/26 14:59:30 by jodufour         ###   ########.fr       */
+/*   Updated: 2022/02/07 03:50:39 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ public:
 	// Member functions
 	void	guardGate(void);
 
-	// Operator overloads
+	// Operators
 	ScavTrap	&operator=(ScavTrap const &rhs);
 };
 

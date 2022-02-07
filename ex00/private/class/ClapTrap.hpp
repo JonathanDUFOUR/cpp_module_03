@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 11:00:49 by jodufour          #+#    #+#             */
-/*   Updated: 2022/01/26 14:49:30 by jodufour         ###   ########.fr       */
+/*   Updated: 2022/02/07 03:50:39 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ public:
 	void	beRepaired(unsigned int const amount);
 	void	takeDamage(unsigned int const amount);
 
-	// Operator overloads
+	// Operators
 	ClapTrap	&operator=(ClapTrap const &rhs);
 };
 
