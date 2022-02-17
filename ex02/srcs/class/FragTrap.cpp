@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:13:39 by jodufour          #+#    #+#             */
-/*   Updated: 2022/02/17 18:05:55 by jodufour         ###   ########.fr       */
+/*   Updated: 2022/02/17 18:50:20 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,10 @@ void	FragTrap::highFivesGuys(void) const
 
 FragTrap	&FragTrap::operator=(FragTrap const &rhs)
 {
+	if (DEBUG)
+		std::cout
+		<< "Calling FragTrap::operator=()"
+		<< std::endl;
 	if (this != &rhs)
 	{
 		this->_name = rhs._name;
