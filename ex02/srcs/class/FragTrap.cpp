@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:13:39 by jodufour          #+#    #+#             */
-/*   Updated: 2022/02/07 04:14:52 by jodufour         ###   ########.fr       */
+/*   Updated: 2022/02/17 18:05:55 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,38 +16,38 @@
 //                                Constructors                                //
 // ************************************************************************** //
 
-FragTrap::FragTrap(void) :
-	ClapTrap("default")
+FragTrap::FragTrap(std::string const &name) :
+	ClapTrap(
+		name,
+		FragTrap::_defaultHitPoints,
+		FragTrap::_defaultEnergyPoints,
+		FragTrap::_defaultAttackDamages)
 {
-	std::cout
-	<< "Building FragTrap "
-	<< this->_name
-	<< std::endl;
-	this->_hitPoints = 100;
-	this->_energyPoints = 100;
-	this->_attackDamage = 30;
+	if (DEBUG)
+		std::cout
+		<< "Creating FragTrap "
+		<< this->_name
+		<< " (" << this->_hitPoints << ")"
+		<< " (" << this->_energyPoints << ")"
+		<< " (" << this->_attackDamages << ")"
+		<< std::endl;
 }
 
 FragTrap::FragTrap(FragTrap const &src) :
-	ClapTrap(src._name)
+	ClapTrap(
+		src._name,
+		src._hitPoints,
+		src._energyPoints,
+		src._attackDamages)
 {
-	std::cout
-	<< "Building FragTrap "
-	<< this->_name
-	<< std::endl;
-	*this = src;
-}
-
-FragTrap::FragTrap(std::string const name) :
-	ClapTrap(name)
-{
-	std::cout
-	<< "Building FragTrap "
-	<< this->_name
-	<< std::endl;
-	this->_hitPoints = 100;
-	this->_energyPoints = 100;
-	this->_attackDamage = 30;
+	if (DEBUG)
+		std::cout
+		<< "Creating FragTrap "
+		<< this->_name
+		<< " (" << this->_hitPoints << ")"
+		<< " (" << this->_energyPoints << ")"
+		<< " (" << this->_attackDamages << ")"
+		<< std::endl;
 }
 
 // ************************************************************************* //
@@ -56,10 +56,11 @@ FragTrap::FragTrap(std::string const name) :
 
 FragTrap::~FragTrap(void)
 {
-	std::cout
-	<< "Disassembling FragTrap "
-	<< this->_name
-	<< std::endl;
+	if (DEBUG)
+		std::cout
+		<< "Destroying FragTrap "
+		<< this->_name
+		<< std::endl;
 }
 
 // ************************************************************************* //
@@ -68,6 +69,10 @@ FragTrap::~FragTrap(void)
 
 void	FragTrap::highFivesGuys(void) const
 {
+	if (DEBUG)
+		std::cout
+		<< "Calling FragTrap::highFivesGuys()"
+		<< std::endl;
 	std::cout
 	<< "FragTrap "
 	<< this->_name
@@ -86,7 +91,7 @@ FragTrap	&FragTrap::operator=(FragTrap const &rhs)
 		this->_name = rhs._name;
 		this->_hitPoints = rhs._hitPoints;
 		this->_energyPoints = rhs._energyPoints;
-		this->_attackDamage = rhs._attackDamage;
+		this->_attackDamages = rhs._attackDamages;
 	}
 	return *this;
 }
@@ -97,6 +102,15 @@ std::ostream	&operator<<(std::ostream &o, FragTrap const &rhs)
 	<< "\t" "name: " << rhs.getName() << std::endl
 	<< "\t" "hitPoints: " << rhs.getHitPoints() << std::endl
 	<< "\t" "energyPoints: " << rhs.getEnergyPoints() << std::endl
-	<< "\t" "attackDamage: " << rhs.getAttackDamage() << std::endl;
+	<< "\t" "attackDamage: " << rhs.getAttackDamages() << std::endl;
 	return o;
 }
+
+// ************************************************************************** //
+//                             Private Attributes                             //
+// ************************************************************************** //
+
+std::string const	FragTrap::_defaultName = "defaultName";
+unsigned int const	FragTrap::_defaultHitPoints = 100;
+unsigned int const	FragTrap::_defaultEnergyPoints = 100;
+unsigned int const	FragTrap::_defaultAttackDamages = 30;

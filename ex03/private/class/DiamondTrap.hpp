@@ -6,35 +6,41 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 16:03:54 by jodufour          #+#    #+#             */
-/*   Updated: 2022/02/07 03:50:39 by jodufour         ###   ########.fr       */
+/*   Updated: 2022/02/17 18:34:19 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DIAMONDTRAP_HPP
 # define DIAMONDTRAP_HPP
 
-# include <iostream>
 # include "ScavTrap.hpp"
 # include "FragTrap.hpp"
+
+# ifndef DEBUG
+#  define DEBUG 0
+# endif
 
 class DiamondTrap : public ScavTrap, public FragTrap
 {
 private:
+	// Attributes
 	std::string	_name;
 
-protected:
+	static std::string const	_defaultName;
+	static unsigned int const	_defaultHitPoints;
+	static unsigned int const	_defaultEnergyPoints;
+	static unsigned int const	_defaultAttackDamages;
 
 public:
 	// Constructors
-	DiamondTrap(void);
+	DiamondTrap(std::string const &name = DiamondTrap::_defaultName);
 	DiamondTrap(DiamondTrap const &src);
-	DiamondTrap(std::string const name);
 
 	// Destructors
 	virtual ~DiamondTrap(void);
 
 	// Accessors
-	std::string	getName(void) const;
+	std::string const	&getName(void) const;
 
 	// Member functions
 	void	whoAmI(void) const;

@@ -6,12 +6,11 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 16:02:21 by jodufour          #+#    #+#             */
-/*   Updated: 2022/01/29 00:43:49 by jodufour         ###   ########.fr       */
+/*   Updated: 2022/02/17 18:29:31 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cstdlib>
-#include <iostream>
 #include "class/ScavTrap.hpp"
 #include "class/FragTrap.hpp"
 #include "class/DiamondTrap.hpp"

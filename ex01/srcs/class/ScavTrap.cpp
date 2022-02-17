@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 13:22:30 by jodufour          #+#    #+#             */
-/*   Updated: 2022/02/07 04:03:34 by jodufour         ###   ########.fr       */
+/*   Updated: 2022/02/17 17:55:49 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,40 +16,43 @@
 //                                Constructors                                //
 // ************************************************************************** //
 
-ScavTrap::ScavTrap(void) :
-	ClapTrap("default"),
+ScavTrap::ScavTrap(std::string const &name) :
+	ClapTrap(
+		name,
+		ScavTrap::_defaultHitPoints,
+		ScavTrap::_defaultEnergyPoints,
+		ScavTrap::_defaultAttackDamages),
 	_activeMode(false)
 {
-	std::cout
-	<< "Building ScavTrap "
-	<< this->_name
-	<< std::endl;
-	this->_hitPoints = 100;
-	this->_energyPoints = 50;
-	this->_attackDamage = 20;
+	if (DEBUG)
+		std::cout
+		<< std::boolalpha
+		<< "Creating ScavTrap "
+		<< this->_name
+		<< " (" << this->_hitPoints << ")"
+		<< " (" << this->_energyPoints << ")"
+		<< " (" << this->_attackDamages << ")"
+		<< " (" << this->_activeMode << ")"
+		<< std::endl;
 }
 
 ScavTrap::ScavTrap(ScavTrap const &src) :
-	ClapTrap(src._name)
+	ClapTrap(
+		src._name,
+		src._hitPoints,
+		src._energyPoints,
+		src._attackDamages)
 {
-	std::cout
-	<< "Building ScavTrap "
-	<< this->_name
-	<< std::endl;
-	*this = src;
-}
-
-ScavTrap::ScavTrap(std::string const name) :
-	ClapTrap(name),
-	_activeMode(false)
-{
-	std::cout
-	<< "Building ScavTrap "
-	<< this->_name
-	<< std::endl;
-	this->_hitPoints = 100;
-	this->_energyPoints = 50;
-	this->_attackDamage = 20;
+	if (DEBUG)
+		std::cout
+		<< std::boolalpha
+		<< "Creating ScavTrap "
+		<< this->_name
+		<< " (" << this->_hitPoints << ")"
+		<< " (" << this->_energyPoints << ")"
+		<< " (" << this->_attackDamages << ")"
+		<< " (" << this->_activeMode << ")"
+		<< std::endl;
 }
 
 // ************************************************************************* //
@@ -58,10 +61,11 @@ ScavTrap::ScavTrap(std::string const name) :
 
 ScavTrap::~ScavTrap(void)
 {
-	std::cout
-	<< "Disassembling ScavTrap "
-	<< this->_name
-	<< std::endl;
+	if (DEBUG)
+		std::cout
+		<< "Destroying ScavTrap "
+		<< this->_name
+		<< std::endl;
 }
 
 // ************************************************************************* //
@@ -70,13 +74,17 @@ ScavTrap::~ScavTrap(void)
 
 void	ScavTrap::attack(std::string const &target)
 {
+	if (DEBUG)
+		std::cout
+		<< "Calling ScavTrap::attack()"
+		<< std::endl;
 	std::cout
 	<< "ScavTrap "
 	<< this->_name;
 	if (this->_hitPoints && this->_energyPoints)
 		std::cout
 		<< " deals "
-		<< this->_attackDamage
+		<< this->_attackDamages
 		<< " damages to ";
 	else if (!this->_hitPoints)
 		std::cout
@@ -92,6 +100,10 @@ void	ScavTrap::attack(std::string const &target)
 
 void	ScavTrap::guardGate(void)
 {
+	if (DEBUG)
+		std::cout
+		<< "Calling ScavTrap::guardGate()"
+		<< std::endl;
 	std::cout
 	<< "ScavTrap "
 	<< this->_name;
@@ -113,12 +125,16 @@ void	ScavTrap::guardGate(void)
 
 ScavTrap	&ScavTrap::operator=(ScavTrap const &rhs)
 {
+	if (DEBUG)
+		std::cout
+		<< "Calling ScavTrap::operator=()"
+		<< std::endl;
 	if (this != &rhs)
 	{
 		this->_name = rhs._name;
 		this->_hitPoints = rhs._hitPoints;
 		this->_energyPoints = rhs._energyPoints;
-		this->_attackDamage = rhs._attackDamage;
+		this->_attackDamages = rhs._attackDamages;
 		this->_activeMode = rhs._activeMode;
 	}
 	return *this;
@@ -130,6 +146,15 @@ std::ostream	&operator<<(std::ostream &o, ScavTrap const &rhs)
 	<< "\t" "name: " << rhs.getName() << std::endl
 	<< "\t" "hitPoints: " << rhs.getHitPoints() << std::endl
 	<< "\t" "energyPoints: " << rhs.getEnergyPoints() << std::endl
-	<< "\t" "attackDamage: " << rhs.getAttackDamage() << std::endl;
+	<< "\t" "attackDamages: " << rhs.getAttackDamages() << std::endl;
 	return o;
 }
+
+// ************************************************************************** //
+//                             Private Attributes                             //
+// ************************************************************************** //
+
+std::string const	ScavTrap::_defaultName = std::string("defaultName");
+unsigned int const	ScavTrap::_defaultHitPoints = 100;
+unsigned int const	ScavTrap::_defaultEnergyPoints = 50;
+unsigned int const	ScavTrap::_defaultAttackDamages = 20;

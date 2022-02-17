@@ -6,27 +6,32 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:12:55 by jodufour          #+#    #+#             */
-/*   Updated: 2022/02/07 03:50:39 by jodufour         ###   ########.fr       */
+/*   Updated: 2022/02/17 18:35:07 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRAGTRAP_HPP
 # define FRAGTRAP_HPP
 
-# include <iostream>
 # include "ClapTrap.hpp"
+
+# ifndef DEBUG
+#  define DEBUG 0
+# endif
 
 class FragTrap : virtual public ClapTrap
 {
-private:
-
 protected:
+	// Attributes
+	static std::string const	_defaultName;
+	static unsigned int const	_defaultHitPoints;
+	static unsigned int const	_defaultEnergyPoints;
+	static unsigned int const	_defaultAttackDamages;
 
 public:
 	// Constructors
-	FragTrap(void);
+	FragTrap(std::string const &name = FragTrap::_defaultName);
 	FragTrap(FragTrap const &src);
-	FragTrap(std::string const name);
 
 	// Destructors
 	virtual ~FragTrap(void);

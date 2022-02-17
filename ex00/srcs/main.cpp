@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 11:00:10 by jodufour          #+#    #+#             */
-/*   Updated: 2022/01/29 00:43:01 by jodufour         ###   ########.fr       */
+/*   Updated: 2022/02/17 17:06:02 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 
 int	main(void)
 {
-	ClapTrap	ct("C3PO");
+	ClapTrap	ct(std::string("C3PO"));
 	int			i;
 
 	std::cout << ct << std::endl;
 
-	ct = ClapTrap("R2D2");
+	ct = ClapTrap(std::string("R2D2"));
 
 	std::cout << ct << std::endl;
 

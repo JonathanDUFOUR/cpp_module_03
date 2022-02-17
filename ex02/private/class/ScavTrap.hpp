@@ -6,34 +6,41 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 13:14:55 by jodufour          #+#    #+#             */
-/*   Updated: 2022/02/07 03:50:39 by jodufour         ###   ########.fr       */
+/*   Updated: 2022/02/17 18:33:32 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SCAVTRAP_HPP
 # define SCAVTRAP_HPP
 
-# include <iostream>
 # include "ClapTrap.hpp"
+
+# ifndef DEBUG
+#  define DEBUG 0
+# endif
 
 class ScavTrap : public ClapTrap
 {
 private:
+	// Attributes
 	bool	_activeMode;
 
-protected:
+	static std::string const	_defaultName;
+	static unsigned int const	_defaultHitPoints;
+	static unsigned int const	_defaultEnergyPoints;
+	static unsigned int const	_defaultAttackDamages;
 
 public:
 	// Constructors
-	ScavTrap(void);
+	ScavTrap(std::string const &name = ScavTrap::_defaultName);
 	ScavTrap(ScavTrap const &src);
-	ScavTrap(std::string const name);
 
 	// Destructors
 	virtual ~ScavTrap(void);
 
 	// Member functions
-	void	guardGate(void);
+	virtual void	attack(std::string const &target);
+	void			guardGate(void);
 
 	// Operators
 	ScavTrap	&operator=(ScavTrap const &rhs);
