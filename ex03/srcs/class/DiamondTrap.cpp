@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 16:25:42 by jodufour          #+#    #+#             */
-/*   Updated: 2022/02/17 18:24:16 by jodufour         ###   ########.fr       */
+/*   Updated: 2022/02/18 09:03:05 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,7 +135,7 @@ std::ostream	&operator<<(std::ostream &o, DiamondTrap const &rhs)
 //                             Private Attributes                             //
 // ************************************************************************** //
 
-std::string const	DiamondTrap::_defaultName = "defaultName";
+std::string const	DiamondTrap::_defaultName = std::string("defaultName");
 unsigned int const	DiamondTrap::_defaultHitPoints = FragTrap::_defaultHitPoints;
 unsigned int const	DiamondTrap::_defaultEnergyPoints = ScavTrap::_defaultEnergyPoints;
 unsigned int const	DiamondTrap::_defaultAttackDamages = FragTrap::_defaultAttackDamages;
