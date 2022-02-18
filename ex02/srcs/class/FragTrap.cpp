@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:13:39 by jodufour          #+#    #+#             */
-/*   Updated: 2022/02/17 18:50:20 by jodufour         ###   ########.fr       */
+/*   Updated: 2022/02/18 09:14:17 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,7 @@ std::ostream	&operator<<(std::ostream &o, FragTrap const &rhs)
 //                             Private Attributes                             //
 // ************************************************************************** //
 
-std::string const	FragTrap::_defaultName = "defaultName";
+std::string const	FragTrap::_defaultName = std::string("defaultName");
 unsigned int const	FragTrap::_defaultHitPoints = 100;
 unsigned int const	FragTrap::_defaultEnergyPoints = 100;
 unsigned int const	FragTrap::_defaultAttackDamages = 30;
