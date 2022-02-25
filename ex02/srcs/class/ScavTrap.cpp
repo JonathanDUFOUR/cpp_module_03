@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 13:22:30 by jodufour          #+#    #+#             */
-/*   Updated: 2022/02/17 17:55:49 by jodufour         ###   ########.fr       */
+/*   Updated: 2022/02/25 10:24:30 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,10 +131,7 @@ ScavTrap	&ScavTrap::operator=(ScavTrap const &rhs)
 		<< std::endl;
 	if (this != &rhs)
 	{
-		this->_name = rhs._name;
-		this->_hitPoints = rhs._hitPoints;
-		this->_energyPoints = rhs._energyPoints;
-		this->_attackDamages = rhs._attackDamages;
+		this->ClapTrap::operator=(rhs);
 		this->_activeMode = rhs._activeMode;
 	}
 	return *this;
@@ -155,6 +152,6 @@ std::ostream	&operator<<(std::ostream &o, ScavTrap const &rhs)
 // ************************************************************************** //
 
 std::string const	ScavTrap::_defaultName = std::string("defaultName");
-unsigned int const	ScavTrap::_defaultHitPoints = 100;
-unsigned int const	ScavTrap::_defaultEnergyPoints = 50;
-unsigned int const	ScavTrap::_defaultAttackDamages = 20;
+uint const	ScavTrap::_defaultHitPoints = 100;
+uint const	ScavTrap::_defaultEnergyPoints = 50;
+uint const	ScavTrap::_defaultAttackDamages = 20;

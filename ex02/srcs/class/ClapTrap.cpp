@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 11:00:39 by jodufour          #+#    #+#             */
-/*   Updated: 2022/02/17 17:54:01 by jodufour         ###   ########.fr       */
+/*   Updated: 2022/02/25 10:02:27 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,9 @@ ClapTrap::ClapTrap(ClapTrap const &src) :
 
 ClapTrap::ClapTrap(
 	std::string const &name,
-	unsigned int const hitPoints,
-	unsigned int const energyPoints,
-	unsigned int const attackDamages) :
+	uint const hitPoints,
+	uint const energyPoints,
+	uint const attackDamages) :
 	_name(name),
 	_hitPoints(hitPoints),
 	_energyPoints(energyPoints),
@@ -94,7 +94,7 @@ std::string const	&ClapTrap::getName(void) const
 	return this->_name;
 }
 
-unsigned int	ClapTrap::getHitPoints(void) const
+uint	ClapTrap::getHitPoints(void) const
 {
 	if (DEBUG)
 		std::cout
@@ -103,7 +103,7 @@ unsigned int	ClapTrap::getHitPoints(void) const
 	return this->_hitPoints;
 }
 
-unsigned int	ClapTrap::getEnergyPoints(void) const
+uint	ClapTrap::getEnergyPoints(void) const
 {
 	if (DEBUG)
 		std::cout
@@ -112,7 +112,7 @@ unsigned int	ClapTrap::getEnergyPoints(void) const
 	return this->_energyPoints;
 }
 
-unsigned int	ClapTrap::getAttackDamages(void) const
+uint	ClapTrap::getAttackDamages(void) const
 {
 	if (DEBUG)
 		std::cout
@@ -151,7 +151,7 @@ void	ClapTrap::attack(std::string const &target)
 	this->_energyPoints -= !!this->_energyPoints;
 }
 
-void	ClapTrap::beRepaired(unsigned int const amount)
+void	ClapTrap::beRepaired(uint const amount)
 {
 	if (DEBUG)
 		std::cout
@@ -177,7 +177,7 @@ void	ClapTrap::beRepaired(unsigned int const amount)
 	this->_energyPoints -= !!this->_energyPoints;
 }
 
-void	ClapTrap::takeDamage(unsigned int const amount)
+void	ClapTrap::takeDamage(uint const amount)
 {
 	if (DEBUG)
 		std::cout
@@ -242,6 +242,6 @@ std::ostream	&operator<<(std::ostream &o, ClapTrap const &rhs)
 // ************************************************************************** //
 
 std::string const	ClapTrap::_defaultName = std::string("defaultName");
-unsigned int const	ClapTrap::_defaultHitPoints = 10;
-unsigned int const	ClapTrap::_defaultEnergyPoints = 10;
-unsigned int const	ClapTrap::_defaultAttackDamages = 0;
+uint const	ClapTrap::_defaultHitPoints = 10;
+uint const	ClapTrap::_defaultEnergyPoints = 10;
+uint const	ClapTrap::_defaultAttackDamages = 0;

@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:13:39 by jodufour          #+#    #+#             */
-/*   Updated: 2022/02/18 09:14:17 by jodufour         ###   ########.fr       */
+/*   Updated: 2022/02/25 10:25:32 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,12 +91,7 @@ FragTrap	&FragTrap::operator=(FragTrap const &rhs)
 		<< "Calling FragTrap::operator=()"
 		<< std::endl;
 	if (this != &rhs)
-	{
-		this->_name = rhs._name;
-		this->_hitPoints = rhs._hitPoints;
-		this->_energyPoints = rhs._energyPoints;
-		this->_attackDamages = rhs._attackDamages;
-	}
+		this->ClapTrap::operator=(rhs);
 	return *this;
 }
 
@@ -115,6 +110,6 @@ std::ostream	&operator<<(std::ostream &o, FragTrap const &rhs)
 // ************************************************************************** //
 
 std::string const	FragTrap::_defaultName = std::string("defaultName");
-unsigned int const	FragTrap::_defaultHitPoints = 100;
-unsigned int const	FragTrap::_defaultEnergyPoints = 100;
-unsigned int const	FragTrap::_defaultAttackDamages = 30;
+uint const	FragTrap::_defaultHitPoints = 100;
+uint const	FragTrap::_defaultEnergyPoints = 100;
+uint const	FragTrap::_defaultAttackDamages = 30;

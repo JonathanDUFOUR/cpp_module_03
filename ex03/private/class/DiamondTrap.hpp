@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 16:03:54 by jodufour          #+#    #+#             */
-/*   Updated: 2022/02/18 09:03:38 by jodufour         ###   ########.fr       */
+/*   Updated: 2022/02/25 10:02:27 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ private:
 	std::string	_name;
 
 	static std::string const	_defaultName;
-	static unsigned int const	_defaultHitPoints;
-	static unsigned int const	_defaultEnergyPoints;
-	static unsigned int const	_defaultAttackDamages;
+	static uint const	_defaultHitPoints;
+	static uint const	_defaultEnergyPoints;
+	static uint const	_defaultAttackDamages;
 
 public:
 	// Constructors

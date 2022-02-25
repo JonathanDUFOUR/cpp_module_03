@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 16:25:42 by jodufour          #+#    #+#             */
-/*   Updated: 2022/02/18 09:03:05 by jodufour         ###   ########.fr       */
+/*   Updated: 2022/02/25 10:29:18 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,11 +112,8 @@ DiamondTrap	&DiamondTrap::operator=(DiamondTrap const &rhs)
 		<< std::endl;
 	if (this != &rhs)
 	{
-		this->_name = rhs._name;
-		this->_hitPoints = rhs._hitPoints;
-		this->_energyPoints = rhs._energyPoints;
-		this->_attackDamages = rhs._attackDamages;
-		this->_activeMode = rhs._activeMode;
+		this->ScavTrap::operator=(rhs);
+		this->FragTrap::operator=(rhs);
 	}
 	return *this;
 }
@@ -136,6 +133,6 @@ std::ostream	&operator<<(std::ostream &o, DiamondTrap const &rhs)
 // ************************************************************************** //
 
 std::string const	DiamondTrap::_defaultName = std::string("defaultName");
-unsigned int const	DiamondTrap::_defaultHitPoints = FragTrap::_defaultHitPoints;
-unsigned int const	DiamondTrap::_defaultEnergyPoints = ScavTrap::_defaultEnergyPoints;
-unsigned int const	DiamondTrap::_defaultAttackDamages = FragTrap::_defaultAttackDamages;
+uint const	DiamondTrap::_defaultHitPoints = FragTrap::_defaultHitPoints;
+uint const	DiamondTrap::_defaultEnergyPoints = ScavTrap::_defaultEnergyPoints;
+uint const	DiamondTrap::_defaultAttackDamages = FragTrap::_defaultAttackDamages;
