@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 13:22:30 by jodufour          #+#    #+#             */
-/*   Updated: 2022/03/02 18:00:59 by jodufour         ###   ########.fr       */
+/*   Updated: 2022/03/02 21:05:08 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -152,6 +152,6 @@ std::ostream	&operator<<(std::ostream &o, ScavTrap const &rhs)
 // ************************************************************************** //
 
 std::string const	ScavTrap::_defaultName("defaultName");
-uint const			ScavTrap::_defaultHitPoints(100);
-uint const			ScavTrap::_defaultEnergyPoints(50);
-uint const			ScavTrap::_defaultAttackDamages(20);
+uint const			ScavTrap::_defaultHitPoints(100U);
+uint const			ScavTrap::_defaultEnergyPoints(50U);
+uint const			ScavTrap::_defaultAttackDamages(20U);

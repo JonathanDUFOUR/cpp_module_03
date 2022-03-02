@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 11:00:39 by jodufour          #+#    #+#             */
-/*   Updated: 2022/03/02 17:53:40 by jodufour         ###   ########.fr       */
+/*   Updated: 2022/03/02 21:02:52 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -222,6 +222,6 @@ std::ostream	&operator<<(std::ostream &o, ClapTrap const &rhs)
 // ************************************************************************** //
 
 std::string const	ClapTrap::_defaultName("defaultName");
-uint const			ClapTrap::_defaultHitPoints(10);
-uint const			ClapTrap::_defaultEnergyPoints(10);
-uint const			ClapTrap::_defaultAttackDamages(0);
+uint const			ClapTrap::_defaultHitPoints(10U);
+uint const			ClapTrap::_defaultEnergyPoints(10U);
+uint const			ClapTrap::_defaultAttackDamages(0U);
