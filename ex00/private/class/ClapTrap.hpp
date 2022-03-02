@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 11:00:49 by jodufour          #+#    #+#             */
-/*   Updated: 2022/03/02 17:54:01 by jodufour         ###   ########.fr       */
+/*   Updated: 2022/03/02 19:41:05 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 #  define DEBUG 0
 # endif
 
-typedef unsigned int uint;
+typedef unsigned int	uint;
 
 class ClapTrap
 {
