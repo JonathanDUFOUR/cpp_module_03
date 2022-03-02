@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 11:00:49 by jodufour          #+#    #+#             */
-/*   Updated: 2022/02/25 10:22:11 by jodufour         ###   ########.fr       */
+/*   Updated: 2022/03/02 17:58:19 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,16 @@ class ClapTrap
 private:
 	// Attributes
 	static std::string const	_defaultName;
-	static uint const	_defaultHitPoints;
-	static uint const	_defaultEnergyPoints;
-	static uint const	_defaultAttackDamages;
+	static uint const			_defaultHitPoints;
+	static uint const			_defaultEnergyPoints;
+	static uint const			_defaultAttackDamages;
 
 protected:
 	// Attributes
 	std::string		_name;
-	uint	_hitPoints;
-	uint	_energyPoints;
-	uint	_attackDamages;
+	uint			_hitPoints;
+	uint			_energyPoints;
+	uint			_attackDamages;
 
 	// Constructors
 	ClapTrap(

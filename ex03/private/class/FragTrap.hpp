@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:12:55 by jodufour          #+#    #+#             */
-/*   Updated: 2022/02/25 10:02:27 by jodufour         ###   ########.fr       */
+/*   Updated: 2022/03/02 17:58:36 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ class FragTrap : virtual public ClapTrap
 protected:
 	// Attributes
 	static std::string const	_defaultName;
-	static uint const	_defaultHitPoints;
-	static uint const	_defaultEnergyPoints;
-	static uint const	_defaultAttackDamages;
+	static uint const			_defaultHitPoints;
+	static uint const			_defaultEnergyPoints;
+	static uint const			_defaultAttackDamages;
 
 public:
 	// Constructors
